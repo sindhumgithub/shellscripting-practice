@@ -8,7 +8,7 @@ if [ -d $filename ]; then
     echo "Directory $filename exists"
     echo "Files present in $filename directory are::" 
     ls -ltrh $filename
-    exit 1
+    
 
 
 # shell script for File..
