@@ -3,13 +3,16 @@ R="\e[31m"
 G="\e[32m"
 filename=$1
 
+# Shell scripting code for directory....
 if [ -d $filename ]; then
     echo "Directory $filename exists"
-    result=$(ls -ltrh)
-    echo "Files present in $filename directory is::" $result
-fi
+    echo "Files present in $filename directory are::" 
+    ls -ltrh $filename
+    exit 1
 
-if [ -e $filename ]; then   #-e file exists or not exists.
+
+# shell script for File..
+elif [ -e $filename ]; then   #-e file exists or not exists.
     echo -e "$G $filename file exists $N"
     
     # shell scripting code whether the file is readable or not 
