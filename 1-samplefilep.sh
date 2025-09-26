@@ -5,8 +5,8 @@ filename=$1
 
 # Shell scripting code for directory....
 if [ -d $filename ]; then
-    echo "$G Directory $filename exists $N"
-    echo "$G Files present in $filename directory are:: $N" 
+    echo -e "$G Directory $filename exists $N"
+    echo -e "$G Files present in $filename directory are:: $N" 
     ls -ltrh $filename
     exit 1
 
