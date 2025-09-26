@@ -6,7 +6,7 @@ echo "Content has been saved to $filename1"
 
 read -p "Please enter a filename to check the word count" filename2
 
-if [ -e $filename2 ]; then
+if [ -e $filename2 ]; then        # -e indicates whether the file is existing or not
     echo "File $filename2 exists"
     result1=$(wc -l < $filename2)
     echo "The number of lines in a file is:" $result1
