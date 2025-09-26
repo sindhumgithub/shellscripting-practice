@@ -18,7 +18,7 @@ if [ -e $RESULT ]; then
     echo "replacing the content inside a $FILENAME file"
     sed -i s/FOO/BAR/g  $RESULT
     echo "Replaced with latest content in $FILENAME :::"
-    cat $FILENAME
+    cat $RESULT
 else
     echo "$FILENAME file DOES NOT found in $LOC"
 fi 
