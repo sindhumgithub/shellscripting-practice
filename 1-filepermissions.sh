@@ -1,0 +1,45 @@
+#!/bin/bash
+R="\e[31m"
+G="\e[32m"
+filename=$1
+
+# Shell scripting code for directory....
+if [ -d $filename ]; then
+    echo -e "$G Directory $filename exists $N"
+    echo -e "$G Files present in $filename directory are:: $N" 
+    ls -ltrh $filename
+    exit 1
+
+
+# shell script for File..
+elif [ -e $filename ]; then   #-e file exists or not exists.
+    echo -e "$G $filename file exists $N"
+    
+    # shell scripting code whether the file is readable or not 
+    if [ -r $filename ]; then   #  -r indicates whether the file is readable or not.
+        echo -e "$G $filename is readable $N"
+    else
+        echo -e "$R $filename is NOT readable $N"
+    fi
+
+    # shell scripting code whether the file is writable or not 
+    if [ -w $filename ]; then     #  -w incidates whether the file is writable or not.
+        echo -e "$G $filename file is writable $N"
+    else
+        echo -e "$R $filename file NOT writable $N"
+    fi
+
+    # shell scripting code whether the file is executable or not 
+    if [ -x $filename ]; then  #  -x incidates whether the file is executable or not.
+        echo -e "$G $filename file is executable $N"
+    else
+        echo -e "$R $filename is NOT executable $N"
+    fi
+
+else
+    echo -e "$R $filename DOES NOT exist $N"
+
+fi
+
+
+
