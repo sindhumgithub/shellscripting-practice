@@ -1,22 +1,26 @@
 #!/bin/bash
 
-read -p "Enter your path to change::"  PATH    #Passing path in command line argument ex:  /var/log
+read -p "Enter your path to change::"  LOC    #Passing path in command line argument ex:  /var/log
 
-if [ -e $PATH ]; then
-    echo "$PATH exists.."
+if [ -e $LOC ]; then
+    echo "$LOC exists.."
 else 
-    echo "$PATH DOES NOT exist.."
+    echo "$LOC DOES NOT exist.."
 fi
 
-ls -ltrh $PATH
+ls -ltrh $LOC
 
-read -p "Enter filename::" filename
-if [ -e $filename ]; then
-    echo "$filename exists..."
-    echo "replacing the content inside a $filename file"
-    RESULT=$(sed -i s/FOO/BAR/g)
-    echo "Replaced with latest content in $filename :::" $RESULT
+read -p "Enter filename::" FILENAME
+RESULT=$LOC/$FILENAME
+
+if [ -e $RESULT ]; then
+    echo "$FILENAME exists..."
+    echo "replacing the content inside a $FILENAME file"
+    sed -i s/FOO/BAR/g  $RESULT
+    echo "Replaced with latest content in $FILENAME :::"
+    cat $FILENAME
 else
-    echo "$filename file DOES NOT found...."
+    echo "$FILENAME file DOES NOT found in $LOC"
+fi 
 
     
