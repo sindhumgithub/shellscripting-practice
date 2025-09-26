@@ -11,6 +11,7 @@ if [ -e $filename ]; then
         cat $output
     else 
         echo "NO ERRORS in $filename"
+    fi
 else
     echo "$filename DOES NOT exist"
 fi
