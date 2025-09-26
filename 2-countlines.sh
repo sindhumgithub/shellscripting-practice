@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Taking the input from user/keyboard
-read -p "Enter a filename" filename
+read -p "Enter a filename" filename:"
 echo "Please enter your content now ........"
 cat > $filename
 echo "Content has been saved to $filename"
