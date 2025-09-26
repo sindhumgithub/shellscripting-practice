@@ -3,6 +3,12 @@ R="\e[31m"
 G="\e[32m"
 filename=$1
 
+if [ -d $filename ]; then
+    echo "Directory $filename exists"
+    result=$(ls -ltrh)
+    echo "Files present in $filename directory is::" $result
+fi
+
 if [ -e $filename ]; then   #-e file exists or not exists.
     echo -e "$G $filename file exists $N"
     
@@ -26,11 +32,6 @@ if [ -e $filename ]; then   #-e file exists or not exists.
     else
         echo -e "$R $filename is NOT executable $N"
     fi
-
-elif [ -d $filename ]; then
-    echo "Directory $filename exists"
-    result=$(ls -ltrh)
-    echo "Files present in $filename directory is::" $result
 
 else
     echo -e "$R $filename DOES NOT exist $N"
