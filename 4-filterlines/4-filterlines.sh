@@ -1,6 +1,6 @@
 #!/bin/bash
 
-read -p "Please enter your content to create a file" filename
+read -p "Please mention your filename:::" filename
 read -p "Enter the output file::" output
 
 if [ -e $filename ]; then
