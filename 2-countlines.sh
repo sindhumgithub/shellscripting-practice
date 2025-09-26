@@ -2,7 +2,10 @@
 
 # Taking the input from user/keyboard
 read -p "Enter a filename" filename
-echo "Hello Everyone" &>$filename
+echo "Please enter your content now ........"
+cat > $filename
+echo "Content has been saved to $filename"
+cat $filename
 
 #Checking whether the file exist or not
 if [ -e $filename ]; then
