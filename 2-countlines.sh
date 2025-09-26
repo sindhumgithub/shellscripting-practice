@@ -10,7 +10,7 @@ cat $filename
 #Checking whether the file exist or not
 if [ -e $filename ]; then
     echo "File $filename exists"
-    result=$(wc -l $filename)
+    result=$(wc -l)
     echo "The word count is:" $result
 else
      echo "File $filename does not exists"
