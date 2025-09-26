@@ -1,28 +1,21 @@
 #!/bin/bash
 
-# Taking the input from user/keyboard
-read -p "Enter a filename" filename
-echo "Please enter your content now ........"
-cat > $filename
-echo "Content has been saved to $filename"
-cat $filename
+read -p "Please enter your content to create a file" filename1
+cat > $filename1
+echo "Content has been saved to $filename1"
 
-#Checking whether the file exist or not
-if [ -e $filename ]; then
-    echo "File $filename exists"
-    result1=$(wc -l < $filename)
+read -p "Please enter a filename to check the word count" filename2
+
+if [ -e $filename2 ]; then
+    echo "File $filename2 exists"
+    result1=$(wc -l < $filename2)
     echo "The number of lines in a file is:" $result1
-    result2=$(wc -w < $filename)
+    result2=$(wc -w < $filename2)
     echo "The number of words in a file is:" $result2
-    result3=$(wc -c < $filename)
-    echo "The number of lines in a file is:" $result3
+    result3=$(wc -c < $filename2)
+    echo "The number of characters in a file is:" $result3
     exit 0
 else
-     echo "File $filename does not exists"
+     echo "File $filename2 does not exists"
      exit 1
 fi
-
-
-
-
-  
