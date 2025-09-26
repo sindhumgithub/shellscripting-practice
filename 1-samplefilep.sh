@@ -29,9 +29,9 @@ if [ -e $filename ]; then   #-e file exists or not exists.
 
 elif [ -d $filename ]; then
     echo "Directory $filename exists"
-    result=$(cat $filename | ls -ltrh)
+    result=$(ls -ltrh)
     echo "Files present in $filename directory is::" $result
-    
+
 else
     echo -e "$R $filename DOES NOT exist $N"
 
