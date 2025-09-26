@@ -5,10 +5,10 @@ filename=$1
 
 # Shell scripting code for directory....
 if [ -d $filename ]; then
-    echo "Directory $filename exists"
-    echo "Files present in $filename directory are::" 
+    echo "$G Directory $filename exists $N"
+    echo "$G Files present in $filename directory are:: $N" 
     ls -ltrh $filename
-    
+    exit 1
 
 
 # shell script for File..
