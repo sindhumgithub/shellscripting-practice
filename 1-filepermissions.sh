@@ -1,6 +1,7 @@
 #!/bin/bash
+filename=$1
 
-read -p "Please enter your filename::" filename
+read -p "Please enter your filename::" $filename
 echo "Your filename is:: " $filename
 
 if [ -e $filename ]; then   #-e file exists or not exists.
