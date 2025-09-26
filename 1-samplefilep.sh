@@ -5,25 +5,25 @@ filename=$1
 if [ -e $filename ]; then   #-e file exists or not exists.
     echo "$filename file exists"
 if [ -r $filename ]; then   #  -r indicates whether the file is readable or not.
-    echo "$G $filename is readable"
+    echo "$filename is readable"
 else
-    echo "$R $filename is NOT readable $N"
+    echo "$filename is NOT readable"
 fi
 
 if [ -w $filename ]; then     #  -w incidates whether the file is writable or not.
-    echo "$G $filename file is writable $N"
+    echo "$filename file is writable"
 else
-    echo "$R $filename file NOT writable $N"
+    echo "$filename file NOT writable"
 fi
 
 if [ -x $filename ]; then  #  -x incidates whether the file is executable or not.
-    echo "$G $filename file is executable $N"
+    echo "$filename file is executable"
 else
-    echo "$R $filename is NOT executable $N"
+    echo "$filename is NOT executable"
 fi
 
 else
-    echo -e "$R $filename DOES NOT exist $N"
+    echo -e "$filename DOES NOT exist"
 fi
 
 
