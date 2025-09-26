@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Please enter your content to create a file"
+read -p "Please enter your content to create a file" filename
 cat > $filename
 echo "Content has been saved to $filename"
 
