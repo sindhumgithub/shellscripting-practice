@@ -1,4 +1,5 @@
 #!/bin/bash
+
 R="\e[31m"
 G="\e[32m"
 filename=$1
