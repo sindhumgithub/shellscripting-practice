@@ -5,9 +5,12 @@ read -p "Enter the output file::" output
 
 if [ -e $filename ]; then
     echo "$filename exists.."
-    grep "ERROR" $filename > $output
-    echo "Filtered content saved to $output"
-    cat $output
+    grep -i "ERROR" "$filename" > "$output"
+    if [ -s "$output" ]; then
+        echo "Filtered content saved to $output"
+        cat $output
+    else 
+        echo "NO ERRORS in $filename"
 else
     echo "$filename DOES NOT exist"
 fi
